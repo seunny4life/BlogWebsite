@@ -1,0 +1,40 @@
+{% extends "layout.html"%}
+
+{{title}}
+
+
+<h1>Update your Profile!</h1>
+
+{% block content %}
+
+<form action=" " method="POST">
+
+  {{ form.hidden_tag() }}
+
+  <p>
+    {{ form.about_me.label }}<br>
+    {{ form.about_me(size=32) }}<br>
+    {% for error in form.about_me.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+  </p>
+
+  <p>
+    {{ form.location.label }}<br>
+    {{ form.location(size=32) }}<br>
+    {% for error in form.location.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+  </p>
+  <p>
+    {{ form.country.label }}<br>
+    {{ form.country(size=32) }}<br>
+    {% for error in form.country.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+  </p>
+
+  <p>{{ form.submit() }}</p>
+</form>
+
+{% endblock %}

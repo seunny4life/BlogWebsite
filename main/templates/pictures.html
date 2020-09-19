@@ -1,0 +1,21 @@
+{% extends "layout.html"%}
+
+{{title}}
+
+
+<h1>Update your Profile!</h1>
+
+{% block content %}
+
+<form action=" " method="POST">
+
+  {{ form.hidden_tag() }}picture
+  <p>
+    {{ form.picture.label }}<br>
+    {{ form.picture(size=32) }}<br>
+  </p>
+
+  <p>{{ form.submit() }}</p>
+</form>
+
+{% endblock %}

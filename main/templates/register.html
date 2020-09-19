@@ -1,0 +1,44 @@
+{% extends "layout.html"%}
+
+{{title}}
+
+
+
+{% block content %}
+  <h1>Register Here!</h1>
+<br>
+<form action=" " method="POST">
+
+  {{ form.hidden_tag() }}
+  <p>
+    {{ form.username.label }}<br>
+    {{ form.username(size=400) }}<br>
+    {% for error in form.username.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+  </p>
+  <p>
+    {{ form.email.label }}<br>
+    {{ form.email(size=200) }}<br>
+    {% for error in form.email.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+  </p>
+  <p>
+    {{ form.password.label }}<br>
+    {{ form.password(size=300) }}<br>
+    {% for error in form.password.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+  </p>
+  <p>
+    {{ form.confirm.label }}<br>
+    {{ form.confirm(size=300) }}<br>
+    {% for error in form.confirm.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+  </p>
+  <p>{{ form.submit() }}</p>
+</form>
+
+{% endblock %}

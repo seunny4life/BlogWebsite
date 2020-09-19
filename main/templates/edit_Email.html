@@ -1,0 +1,23 @@
+{% extends "layout.html"%}
+
+{{title}}
+
+
+<h1>Edit your Page!</h1>
+
+{% block content %}
+
+<form action=" " method="POST">
+
+  {{ form.hidden_tag() }}
+  <p>
+    {{ form.email.label }}<br>
+    {{ form.email(size=200) }}<br>
+    {% for error in form.email.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+  </p>
+  <p>{{ form.submit() }}</p>
+</form>
+
+{% endblock %}
