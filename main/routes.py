@@ -4,7 +4,7 @@ from flask import redirect, flash, url_for, render_template, request
 from main import app, db
 from main.forms import *
 from flask_login import current_user, confirm_login, login_user, logout_user, login_required
-from main.models import Blog, Post
+from main.models import *
 
 
 @app.route('/')
