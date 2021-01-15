@@ -2,11 +2,12 @@
 
 {{title}}
 
-
 {% block content %}
+
+<br><br>
+<h2>Create Post </h2>
 <br>
 <form action=" " method="POST">
-  <br>
 
   {{ form.hidden_tag() }}
   
@@ -33,7 +34,7 @@
           {{ form.content(class="form-control form-control-lg is-invalid") }}
           <div class="invalid-feedback">
               {% for error in form.content.errors %}
-                  <span>{{ error }}</span>
+                  <span style="color: red" >{{ error }}</span>
               {% endfor %}
           </div>
       {% else %}

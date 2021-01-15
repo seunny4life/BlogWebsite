@@ -11,7 +11,6 @@ from main.models import *
 @app.route('/home')
 def home():
     posts = Post.query.all()
-    flash("Welcome now")
     return render_template('home.html', title='Home', posts=posts)
 
 

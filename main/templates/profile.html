@@ -2,10 +2,12 @@
 
 {{title}}
 
+{% block content %}
+
+<br><br>
 
 <h1>Profile</h1>
 
-{% block content %}
 <br><br>
     <img src="{{ image_file }}" alt="Picture">
     <a href="{{ url_for('pictures') }}">Edit Picture</a></p>

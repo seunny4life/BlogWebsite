@@ -2,20 +2,34 @@
 
 {{title}}
 
-
-<h1>Update your Profile!</h1>
-
 {% block content %}
+
+<br><br>
+<h1>Update Picture</h1>
 
 <form action=" " method="POST">
 
-  {{ form.hidden_tag() }}picture
-  <p>
-    {{ form.picture.label }}<br>
-    {{ form.picture(size=32) }}<br>
-  </p>
+  {{ form.hidden_tag() }}
 
-  <p>{{ form.submit() }}</p>
+  <br>
+  <fieldset class="form-group">
+    <legend class="border-bottom mb-4">{{ legend }}</legend>
+    <div class="form-group">
+      {% if form.picture.errors %}
+          {{ form.picture(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+              {% for error in form.picture.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+          </div>
+      {% else %}
+        {{ form.picture(class="form-control form-control-lg") }}
+      {% endif %}
+    </div>
+<br><br>
+    <div class="form-group">
+      {{ form.submit(class="btn btn-outline-info") }}
+    </div>
 </form>
 
 {% endblock %}
