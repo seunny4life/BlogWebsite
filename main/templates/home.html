@@ -1,0 +1,16 @@
+{% extends "layout.html"%} 
+
+{{ title }} 
+
+{% block content %} <br /><br />
+    {% for post in posts %}
+    <h2>{{ post.title }}</h2>
+    <p>
+        {{ post.content }} <br />
+            Posted on the {{ post.date_posted.strftime('%Y-%m-%d') }} by 
+        {{ post.author.username }}
+    </p>
+    <hr/>
+
+    {% endfor %} 
+{% endblock %}
