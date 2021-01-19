@@ -36,11 +36,9 @@ MarkupSafe==1.1.1
 netifaces==0.10.9
 oauth==1.0.1
 oauthlib==3.1.0
-olefile==0.46
 onboard==1.4.1
 packaging==20.8
 padme==1.1.1
-paramiko==2.7.2
 passlib==1.7.4
 pbr==5.5.1
 pexpect==4.8.0
