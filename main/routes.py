@@ -10,8 +10,7 @@ from main.models import *
 @app.route('/')
 @app.route('/home')
 def home():
-    posts = Post.query.all()
-    return render_template('home.html', title='Home', posts=posts)
+    return render_template('home.html', title='Home')
 
 
 @app.route("/login", methods=["POST", "GET"])
