@@ -4,6 +4,7 @@ from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_migrate import Migrate
+from .models import *
 
 
 app = Flask(__name__)
@@ -21,5 +22,5 @@ migrate = Migrate(app, db)
 def create_tables():
     from models import Blog
     db.create_all()
-    
+
 from main import routes, models
