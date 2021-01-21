@@ -1,8 +1,8 @@
-from __init__.py import db
 from main import db, login_manager
 from datetime import datetime
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
+from __init__.py import db
 
 
 @login_manager.user_loader
@@ -25,6 +25,10 @@ class Blog(UserMixin, db.Model):
       last_seen = db.Column(db.DateTime, default=datetime.utcnow)
       posts = db.relationship('Post', backref='author', lazy='dynamic')
       image_file = db.Column(db.String(50), nullable=False, default="default.jpg")
+
+      def save_to_db(self):
+        db.session.add(self)
+        db.session.commit()
 
       def set_password(self, password):
             self.password_hash = generate_password_hash(password)
