@@ -1,3 +1,4 @@
+from __init__.py import db
 from main import db, login_manager
 from datetime import datetime
 from flask_login import UserMixin
@@ -10,6 +11,8 @@ def load_user(blog_id):
 
 
 class Blog(UserMixin, db.Model):
+      __tablename__ = 'blog'
+
       id = db.Column(db.Integer, primary_key=True)
       username = db.Column(db.String(100), nullable=False, unique=True, index=True)
       password_hash = db.Column(db.String(300), nullable=False)
