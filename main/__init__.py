@@ -17,9 +17,5 @@ login_manager.login_view = 'login'
 login_manager.login_message_category = 'info'
 migrate = Migrate(app, db)
 
-@app.before_first_request
-def create_tables():
-    from models import Blog, Post
-    db.create_all()
 
 from main import routes, models
