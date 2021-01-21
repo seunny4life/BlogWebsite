@@ -20,7 +20,7 @@ migrate = Migrate(app, db)
 
 @app.before_first_request
 def create_tables():
-    from models import Blog
+    from models import Blog, Post
     db.create_all()
 
 from main import routes, models
